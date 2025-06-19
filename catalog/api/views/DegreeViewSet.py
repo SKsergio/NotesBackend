@@ -6,7 +6,7 @@ from ...models.DegreesModel import DegreesModel
 
 class DegreeViewSet(viewsets.ModelViewSet):
     queryset = DegreesModel.objects.active()
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]#permisos de quines puedes acceder a esto
     serializer_class = DegreeSeializer
 
     #Search files
@@ -29,7 +29,7 @@ class DegreeViewSet(viewsets.ModelViewSet):
             if not instance:
                 return Response({"message": "No se encontró el registro eliminado."}, status=status.HTTP_404_NOT_FOUND)
             instance.restore()
-            return Response({"message": "Sección restaurada correctamente."}, status=status.HTTP_200_OK)
+            return Response({"message": "Grado restaurado correctamente."}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
             

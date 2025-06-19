@@ -9,11 +9,11 @@ class AbstractBaseCatalog(models.Model):
     is_deleted = models.BooleanField(default=False)#field to soft delete
 
     #queryset return active and delete records
-    objects = softDeleteQuerySet.as_manager()
+    objects = softDeleteQuerySet.as_manager()#manager expone los datos de queryset
 
     class Meta():
-        abstract = True
-        ordering = ['id']
+        abstract = True#con esto indicamos que este modelo es abstracto y por ende no se creara como una tabla en la BD
+        ordering = ['id']#indica como deben de ser ordenados los registros al hacer consultas
     
     def __str__(self):
         return f"{self.name}({self.code})"
