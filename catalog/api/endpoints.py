@@ -4,12 +4,12 @@ from .views import SectionViewSet, ClassroomViewset, DegreeViewSet, SubjectViewS
 app_name = "catalog"
 
 routeCatalog = routers.SimpleRouter()
-routeCatalog.register('section', SectionViewSet.SectionViewSet)#route to section catalog 
+routeCatalog.register('sections', SectionViewSet.SectionViewSet)#route to section catalog 
 routeCatalog.register('classrooms', ClassroomViewset.ClassroomViewSet)#route to classrooms catalogs
-routeCatalog.register('degree', DegreeViewSet.DegreeViewSet)#route to degree catalogs
-routeCatalog.register('subject', SubjectViewSet.SubjectViewSet)#route to subject cataloges
-routeCatalog.register('period', PeriodViewSet.PeriodViewSet)#route to types evaluation cataloges
-routeCatalog.register('type_evaluation', TypeEvaluationViewSet.TypeEvaluationViewSet)
+routeCatalog.register('degrees', DegreeViewSet.DegreeViewSet)#route to degree catalogs
+routeCatalog.register('subjects', SubjectViewSet.SubjectViewSet)#route to subject cataloges
+routeCatalog.register('periods', PeriodViewSet.PeriodViewSet)#route to types evaluation cataloges
+routeCatalog.register('type_evaluations', TypeEvaluationViewSet.TypeEvaluationViewSet)
 
 
 urlpatterns = routeCatalog.urls
