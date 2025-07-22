@@ -2,8 +2,8 @@ from django.db import models
 from catalog.utils.queryset import softDeleteQuerySet #import the queryset to softDelete
 
 class AbstractBaseCatalog(models.Model):
-    code = models.CharField(max_length=50, unique=True, null=False)#code 
-    name = models.CharField(max_length=75, null=False)#name
+    code = models.CharField(max_length=12, unique=True, null=False)#code 
+    name = models.CharField(max_length=50, null=False)#name
     created_at = models.DateTimeField(auto_now_add=True)#field to save date of created
     updated_at = models.DateTimeField(auto_now=True)#field to save updated date
     is_deleted = models.BooleanField(default=False)#field to soft delete
